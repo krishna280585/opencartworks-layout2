@@ -41,7 +41,7 @@ public class InvokeBrowser {
 
             if (AutomationConstraints.OS.equalsIgnoreCase("Mac OS")) {
                 LOGGER.info("opening Browser in mac");
-                System.setProperty("webdriver.gecko.driver", "geckodriver");
+                System.setProperty("webdriver.gecko.driver", "src/test/binaries/drivers/geckodriver");
                 eventdriver = new EventFiringWebDriver(new FirefoxDriver());
 
             } else if (AutomationConstraints.OS.equalsIgnoreCase("Windows")) {
@@ -55,7 +55,7 @@ public class InvokeBrowser {
 
             if (AutomationConstraints.OS.equalsIgnoreCase("Mac OS")) {
                 LOGGER.info("opening Browser in mac");
-                System.setProperty("webdriver.opera.driver", "operaChromiumDriver");
+                System.setProperty("webdriver.opera.driver", "src/test/binaries/drivers/operaChromiumDriver");
                 eventdriver = new EventFiringWebDriver(new FirefoxDriver());
 
             } else if (AutomationConstraints.OS.equalsIgnoreCase("Windows")) {
