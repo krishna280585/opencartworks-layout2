@@ -48,10 +48,13 @@ public class DriverUtils {
             LOGGER.info("opening the chrome browser");
 
             if (isMac()) {
+                LOGGER.info("opening browser in Mac");
                 System.setProperty("webdriver.chrome.driver", userPath + "/src/test/resources/drivers/Mac/chromedriver");
             } else if (isLinux()) {
+                LOGGER.info("opening browser in Linux");
                 System.setProperty("webdriver.chrome.driver", userPath + "/src/test/resources/drivers/Ubuntu/chromedriver");
             } else {
+                LOGGER.info("opening browser in Windows");
                 System.setProperty("webdriver.chrome.driver", userPath + "/src/test/resources/drivers/Windows/chromedriver.exe");
             }
         }
@@ -61,11 +64,14 @@ public class DriverUtils {
             {
 
                 if (isMac()) {
-                    System.setProperty("webdriver.chrome.driver", userPath + "/src/test/resources/drivers/Mac/chromedriver");
+                    LOGGER.info("opening browser in Mac");
+                    System.setProperty("webdriver.gecko.driver", userPath + "/src/test/resources/drivers/Mac/geckodriver");
                 } else if (isLinux()) {
-                    System.setProperty("webdriver.chrome.driver", userPath + "/src/test/resources/drivers/Ubuntu/chromedriver");
+                    LOGGER.info("opening browser in Linux");
+                    System.setProperty("webdriver.gecko.driver", userPath + "/src/test/resources/drivers/Ubuntu/geckodriver");
                 } else {
-                    System.setProperty("webdriver.chrome.driver", userPath + "/src/test/resources/drivers/Windows/chromedriver.exe");
+                    LOGGER.info("opening browser in Windows");
+                    System.setProperty("webdriver.gecko.driver", userPath + "/src/test/resources/drivers/Windows/geckodriver.exe");
                 }
             }
 
