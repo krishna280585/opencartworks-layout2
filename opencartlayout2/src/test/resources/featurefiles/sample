@@ -1,0 +1,6 @@
+@login
+Feature: check the login functionality
+  Scenario: user wabts to open the login page
+    Given I should be on opencart homepage
+    When  I click the login page
+    Then  I can succesfully open the loginpage

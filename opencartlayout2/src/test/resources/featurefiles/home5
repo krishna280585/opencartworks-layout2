@@ -1,0 +1,49 @@
+Feature: checking the functionality of opencart layout2 homepage as expected
+
+  Background: User should be on opencart layout2 home page
+
+  Scenario: User wants to login with unregistered Email address
+    When    User enters the email address
+    And     User enters the password
+    Then    User should get an warning message "No match for Email and address"
+
+  Scenario:  User wants to write a review for an perticular item without entering all fields
+    When     User clicks an item from deals of the week
+    And      User clicks the write a review
+    And      User enters the name
+    And      User selects the rating
+    And      User clicks the continue button
+    Then     User should get a message "Review text should be between 25 to 3000 characters"
+
+  Scenario: User wants to register without entering manidatory fields
+    When    User clicks the register button
+    And     User clicks the continue button
+    Then    User should get warning message for all manidatory fields
+
+
+  Scenario:  User wants to contact the opencart by skipping a manidatory field
+    When     User clicks the contact
+    And      User clicks the name and address
+    And      User clicks the submit button
+    Then     User should get an message
+
+  Scenario: User wants to add products to wishlist without login
+    When    User selects an item from Best sellers
+    And     User clicks the Wishlist button
+    Then    User should get an message says "You must Login or create an account to save this product in wishlist"
+
+  Scenario: User wants to signup for newsletter with existing email
+    When    User enters the existing email
+    And     User clicks the subscribe
+    Then    User gets an message say "mail id already exist"
+
+  Scenario: User wants to compare a product which has been added for comparision
+    When    User selects an item from best sellers
+    And     User clicks the compare button
+    Then    User should get an message product already listed in comparision
+
+   Scenario: User wants to check the forgot password reset link
+     When    User clicks on login
+     And     User clicks forgot your password
+     And     User enters the valid email address
+     Then    User should get an message "your account requires approval before you can login"

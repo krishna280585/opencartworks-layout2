@@ -1,0 +1,76 @@
+Feature: checking the functonalities of the opencart layout2 home page
+
+  Background: User should be on opencart layout2 home page
+
+    Scenario: User wants to add a product to wishlist
+      Given   User should on opencart Login page
+      When    User selects a product from homepage Daily deals
+      And     User clicks the Add to wishlist button
+      Then    User can successfully add the item to wishlist
+
+    Scenario: User wants to check the items in wishlist
+       Given   User should be on opencart Login page
+       When    User clicks the Wishlist
+       Then    User can view the items from WishList
+
+    Scenario:  User wants to view items from cart
+      Given    User should be on opencart Login page
+      When     User clicks the MyCart
+      And      User clicks the view cart
+      Then     User can view the selected items from cart
+
+    Scenario: User wants to update the shopping cart
+      Given   User should be on opencart Login page
+      When     User clicks the MyCart
+      And      User clicks the view cart
+      And      User enters the quantity
+      And      User clicks the update button
+      Then     User can succefully modified the shopping cart
+
+    Scenario:  User wants to remove an item from the cart
+      Given    User should be on opencart Login page
+      When     User clicks the MyCart
+      And      User clicks the view cart
+      And      User clicks the Remove button
+      Then     User can remove an item from cart
+
+    Scenario:  User wants to Quick view an item from Trending Items
+       When    User clicks the Quick View button
+       Then    User can view the selcted item
+
+     Scenario:  User wants to add a product for comparision
+        When    User selects an item from New Items
+        And     User clicks the Comapre this product button
+        Then    User can added the product for comparision
+
+     Scenario:   User Wants to compare products
+         When    User clicks the Compare button
+         Then    User can successfully compare the products
+
+     Scenario:    User wants to Contact the opencart about an product
+         When     User mouseover to pages
+         And      User clicks the Contact us page
+         And      User enters the all manidatory fields name,Email address and Enquiry
+         And      User clicks the submit button
+         Then     User can sent an enquire succefully to the store owner
+
+     Scenario:     User wants to check the Blogs
+         When      User mouseover to Blog
+         And       User selects Blog 4 coloumns
+         Then      User can view the Blogs
+
+     Scenario:    User wants to select an item from shop by category
+         When     User mouseover to SHOP
+         And      User clicks the Scanners category
+         Then     User acn view the items from selected category
+
+     Scenario:    User wants to views the special offers
+        When      User clicks the Site Map
+        And       User  clicks the Special Offers
+        Then       User can view the special offer items
+
+     Scenario:    User wants to view products in Sort By order
+       When       User mouseover to AllCategories
+       And        User clicks the Bathroom
+       And        User selects the Name(A-Z) from SortBy
+       Then       User can view the products as per selected sort by option

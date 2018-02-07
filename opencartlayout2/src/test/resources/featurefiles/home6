@@ -1,0 +1,112 @@
+Feature: User wants to check the openacart main functionality
+
+  Scenario:  User wants to write a review for an perticular product
+    When     User clicks an product from deals of the week
+    And      User clicks the write a review
+    And      User enters the name and review
+    And      User selects the rating
+    And      User clicks the continue button
+    Then     User should get a message "Thank you for review"
+
+Scenario:   User wants to search an unavailable product in opencart
+  When      User enters the keyword "sofa"
+  And       User clicks the search button
+  Then      User get a message "There is no such product on this criteria"
+
+ Scenario:  User wants to compare products
+   When     User clicks on compare this product from daily deals
+   Then     User gets a message "you have added a product for comparision"
+   And      User clicks on compare this product for another selected item
+   And      User gets a message "you have added a product for comparision"
+   And      User clicks on compare button
+   Then     User can successfully compare products
+
+  Scenario Outline: User wants to check the major links
+    When            User clicks the menu "<links>"
+    Then            User can successfully view the related page
+    Examples:       |links|
+                    |Home |
+                    |Layouts|
+                    |Features|
+                    |Shop    |
+                    |Blog    |
+                    |Pages   |
+  Scenario: User wants to check apple brand products
+    When    User clicks the brand
+    And     User click the favourite brand apple
+    Then    User can view the selected brand products
+
+  Scenario: User is unable to add product to cart
+    When    User selects product from daily deals
+    And     User clicks the add to cart button
+    Then    User get a message "select required"
+
+  Scenario:  User wants to checkout a poduct as a guest user
+    When     User selects product from daily deals
+    And      User selects an option
+    And      User clicks the add to cart button
+    Then     User can successfully add product to cart
+    And      User mouseover to shopping cart
+    And      User clicks the checkout
+    And      User selects the guest checkout
+    And      User enters the personal details and address
+    And      User enters the comments about order
+    And      User accepts the terms and conditions
+    And      User clicks the confirm order button
+    Then     User get message "Your order has been placed"
+
+   Scenario: User wants to checkout a product as registered user
+     When    User clicks the login
+     And     User enters the login details
+     And     User clicks login button
+     And     User mouseover to shopping cart
+     And     User clicks the checkout
+     And     User enters the billing address and delivery address
+     And     User enters the comments about order
+     And     User accepts conditions
+     And     User clicks the confirm order button
+     Then    User get message "Your order has been placed"
+
+    Scenario: User wants to check the order history
+      When    User clicks the login
+      And     User enters the login details
+      And     User clicks login button
+      And     User clicks the Account from popup bar
+      And     User clicks the history
+      Then    User can view the order history
+      And     User can navigate back to home page
+
+     Scenario: User wants to check the address book
+       When    User clicks the login
+       And     User enters the login details
+       And     User clicks login button
+       And     User clicks the Account from popup bar
+       And     User clicks the Account
+       And     User clicks the address book
+       Then    User can view the adress book entries
+       And     User can navigate back to home page
+
+     Scenario: User wants to check the coming soon products
+       When    User clicks the sitemap
+       And     User clicks the coming soon
+       Then    User can view the coming soon products
+
+
+     Scenario Outline: User wants to estimate his shipping cost
+
+       When     User clicks the login
+       And      User enters the login details
+       And      User clicks the login button
+       And      User mouseover to shopping cart
+       And      User clicks the view cart
+       And      User clicks the estimates and taxes
+       And      User selects the country
+       And      User selects the Region
+       And      User enters the "<postcode>"
+       And      User clicks the get quotes
+       Then     User should get preferred shipping cost popup page
+      Examples: | postcode |
+                | E6 2EX   |
+                | E15 3LT  |
+                | E12 5TQ  |
+

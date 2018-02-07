@@ -1,0 +1,48 @@
+Feature: User wants to checking the functionality of opencart layout2 homepage
+
+  Background: User should be on opencart layout2 home page
+
+  Scenario: User wants to update his account
+    When    User clicks the login page
+    And     User enters the login deatils
+    And     User clicks the login button
+    And     User clicks the edit account
+    And     User change the fields
+    And     User clicks the continue button
+    Then    User can view an message "your account has been succefully updated"
+
+  Scenario: User wants to purchase a gift certificate
+    When    User enters the recipient name,email,your name,your email,gift theme,message and amount
+    And     User checks the terms and conditions
+    And     User clicks the continue button
+    Then    User can successfully purchase the gift certificate
+
+  Scenario: User wants to see reviews for an item
+    When     User clicks the smartphone
+    And      User clicks the item "Cupim should"
+    And      User clicks the reviews
+    Then     User can view the reviews
+
+  Scenario:  User wants to create an account from login page
+    When     User clicks the login page
+    And      User clicks the create an account
+    And      User enters the all manidatory fields
+    And      User clicks the continue button
+    Then     User can successfully create an opencart account with text "Your Account Has Been Created!"
+    And      User clicks the Logout button
+    And      User should Logout with text "Account Logout"
+    And      User clicks the continue button
+    And      User should navigate to home page
+
+  Scenario: User wants to connect to facebook social media
+    When    User clicks the facebook
+    Then    User can view the opencart facebook account
+
+  Scenario: User wants to view the collections by range
+    When    User clicks the collections from shopby category
+    And     User enters the min price and max price
+    Then    User can view the collections
+
+  Scenario: User wants to access the product returns
+    When    User clicks the returns
+    Then    User can access the product returns page
